@@ -14,11 +14,9 @@ class PlaySoundsViewController: UIViewController {
     var audioPlayer:AVAudioPlayer!
     
     func recordAudio() {
-        var audioRecorder: AVAudioRecorder!
+    
         
-        let dirPath = NSSearchPathDirectoriesInDomains(NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) [0] as String,
-        let recordingName "movie_quote.mp3"
-        let pathArray = [dirPath, recordingName]
+
     }
     
     
