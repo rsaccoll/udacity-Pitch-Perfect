@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -111,39 +110,210 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yBD-MC-yvd">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="hdy-Yg-jtn">
+                                <rect key="frame" x="0.0" y="0.0" width="110" height="200"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="KJV-VP-xAp">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="110"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bkT-Wh-rdq" userLabel="SnailButton">
+                                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                <animations/>
+                                                <state key="normal" image="SnailButton"/>
+                                                <connections>
+                                                    <action selector="playSoundForButton:" destination="atA-8K-kXG" eventType="touchUpInside" id="Jkt-T5-dCL"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HNh-yH-bUh" userLabel="RabbitButton">
+                                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                <animations/>
+                                                <state key="normal" image="RabbitButton"/>
+                                                <connections>
+                                                    <action selector="playSoundForButton:" destination="atA-8K-kXG" eventType="touchUpInside" id="kNb-fF-e9K"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <animations/>
+                                        <variation key="default">
+                                            <mask key="subviews">
+                                                <exclude reference="bkT-Wh-rdq"/>
+                                                <exclude reference="HNh-yH-bUh"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="widthClass=compact">
+                                            <mask key="subviews">
+                                                <include reference="bkT-Wh-rdq"/>
+                                                <include reference="HNh-yH-bUh"/>
+                                            </mask>
+                                        </variation>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="U8n-ll-CCy">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="110"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vOo-p1-9Ab" userLabel="ChipmunkButton">
+                                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                <animations/>
+                                                <state key="normal" image="ChipmunkButton"/>
+                                                <connections>
+                                                    <action selector="playSoundForButton:" destination="atA-8K-kXG" eventType="touchUpInside" id="X6c-qO-wIo"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="odO-9f-smF" userLabel="DarthVaderButton">
+                                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                <animations/>
+                                                <state key="normal" image="DarthVaderButton"/>
+                                                <connections>
+                                                    <action selector="playSoundForButton:" destination="atA-8K-kXG" eventType="touchUpInside" id="z8o-M3-PUs"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <animations/>
+                                        <variation key="default">
+                                            <mask key="subviews">
+                                                <exclude reference="vOo-p1-9Ab"/>
+                                                <exclude reference="odO-9f-smF"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="widthClass=compact">
+                                            <mask key="subviews">
+                                                <include reference="vOo-p1-9Ab"/>
+                                                <include reference="odO-9f-smF"/>
+                                            </mask>
+                                        </variation>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="VlX-md-CNb">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="110"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPv-Rh-kA1" userLabel="EchoButton">
+                                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                <animations/>
+                                                <state key="normal" image="EchoButton"/>
+                                                <connections>
+                                                    <action selector="playSoundForButton:" destination="atA-8K-kXG" eventType="touchUpInside" id="kV2-Yn-DEc"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lvm-Ac-kIz" userLabel="ReverbButton">
+                                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                <animations/>
+                                                <state key="normal" title="Button" image="ReverbButton"/>
+                                                <connections>
+                                                    <action selector="playSoundForButton:" destination="atA-8K-kXG" eventType="touchUpInside" id="XoS-D8-PBe"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <animations/>
+                                        <variation key="default">
+                                            <mask key="subviews">
+                                                <exclude reference="HPv-Rh-kA1"/>
+                                                <exclude reference="lvm-Ac-kIz"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="widthClass=compact">
+                                            <mask key="subviews">
+                                                <include reference="HPv-Rh-kA1"/>
+                                                <include reference="lvm-Ac-kIz"/>
+                                            </mask>
+                                        </variation>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="PiJ-B4-dMN">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="110"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="g2I-f7-7dG">
+                                                <rect key="frame" x="0.0" y="0.0" width="110" height="200"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B7G-kD-YDT" userLabel="StopAudioButton">
+                                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                        <animations/>
+                                                        <state key="normal" image="stopAudio"/>
+                                                        <connections>
+                                                            <action selector="stoppButtonPressed:" destination="atA-8K-kXG" eventType="touchUpInside" id="n6Y-cG-8e3"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <animations/>
+                                                <variation key="default">
+                                                    <mask key="subviews">
+                                                        <exclude reference="B7G-kD-YDT"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="widthClass=compact">
+                                                    <mask key="subviews">
+                                                        <include reference="B7G-kD-YDT"/>
+                                                    </mask>
+                                                </variation>
+                                            </stackView>
+                                        </subviews>
+                                        <animations/>
+                                        <variation key="default">
+                                            <mask key="subviews">
+                                                <exclude reference="g2I-f7-7dG"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="widthClass=compact">
+                                            <mask key="subviews">
+                                                <include reference="g2I-f7-7dG"/>
+                                            </mask>
+                                        </variation>
+                                    </stackView>
+                                </subviews>
                                 <animations/>
-                                <state key="normal" image="slow"/>
-                            </button>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="KJV-VP-xAp"/>
+                                        <exclude reference="U8n-ll-CCy"/>
+                                        <exclude reference="VlX-md-CNb"/>
+                                        <exclude reference="PiJ-B4-dMN"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="KJV-VP-xAp"/>
+                                        <include reference="U8n-ll-CCy"/>
+                                        <include reference="VlX-md-CNb"/>
+                                        <include reference="PiJ-B4-dMN"/>
+                                    </mask>
+                                </variation>
+                            </stackView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="yBD-MC-yvd" firstAttribute="top" secondItem="MXj-6v-IRp" secondAttribute="bottom" constant="33" id="psb-zF-meA"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="yBD-MC-yvd" secondAttribute="leading" id="v1z-m6-SgP"/>
+                            <constraint firstItem="hdy-Yg-jtn" firstAttribute="top" secondItem="MXj-6v-IRp" secondAttribute="bottom" id="Lsj-ET-67M"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hdy-Yg-jtn" secondAttribute="trailing" id="M6t-gd-xtg"/>
+                            <constraint firstItem="hdy-Yg-jtn" firstAttribute="leading" secondItem="C4i-QJ-j0R" secondAttribute="leadingMargin" id="Tjr-Xk-TFz"/>
+                            <constraint firstItem="VC0-o7-zgr" firstAttribute="top" secondItem="hdy-Yg-jtn" secondAttribute="bottom" id="zPj-5h-nPh"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="yBD-MC-yvd"/>
+                                <exclude reference="hdy-Yg-jtn"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="psb-zF-meA"/>
-                                <exclude reference="v1z-m6-SgP"/>
+                                <exclude reference="Lsj-ET-67M"/>
+                                <exclude reference="M6t-gd-xtg"/>
+                                <exclude reference="Tjr-Xk-TFz"/>
+                                <exclude reference="zPj-5h-nPh"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="yBD-MC-yvd"/>
+                                <include reference="hdy-Yg-jtn"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="psb-zF-meA"/>
-                                <include reference="v1z-m6-SgP"/>
+                                <include reference="Lsj-ET-67M"/>
+                                <include reference="M6t-gd-xtg"/>
+                                <include reference="Tjr-Xk-TFz"/>
+                                <include reference="zPj-5h-nPh"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="slowButton" destination="yBD-MC-yvd" id="1FV-K7-w87"/>
+                        <outlet property="chipmunkButton" destination="vOo-p1-9Ab" id="7UA-CA-mie"/>
+                        <outlet property="echoButton" destination="HPv-Rh-kA1" id="0ZT-0v-JXy"/>
+                        <outlet property="rabbitButton" destination="HNh-yH-bUh" id="UKM-sB-Spd"/>
+                        <outlet property="reverbButton" destination="lvm-Ac-kIz" id="bBi-y2-3dc"/>
+                        <outlet property="snailButton" destination="bkT-Wh-rdq" id="lS5-2c-rbe"/>
+                        <outlet property="stopButton" destination="B7G-kD-YDT" id="1N6-YV-6FN"/>
+                        <outlet property="vaderButton" destination="odO-9f-smF" id="wAo-0I-QpV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Akv-c0-Mpl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -171,8 +341,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ChipmunkButton" width="100" height="100"/>
+        <image name="DarthVaderButton" width="100" height="100"/>
+        <image name="EchoButton" width="100" height="100"/>
+        <image name="RabbitButton" width="100" height="100"/>
+        <image name="ReverbButton" width="100" height="100"/>
+        <image name="SnailButton" width="100" height="100"/>
         <image name="microphone" width="100" height="100"/>
-        <image name="slow" width="100" height="100"/>
         <image name="stopAudio" width="50" height="50"/>
     </resources>
 </document>
