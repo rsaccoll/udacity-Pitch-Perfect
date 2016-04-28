@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -288,10 +289,10 @@
                                 <exclude reference="hdy-Yg-jtn"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="zPj-5h-nPh"/>
                                 <exclude reference="Lsj-ET-67M"/>
                                 <exclude reference="M6t-gd-xtg"/>
                                 <exclude reference="Tjr-Xk-TFz"/>
-                                <exclude reference="zPj-5h-nPh"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -299,10 +300,10 @@
                                 <include reference="hdy-Yg-jtn"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="zPj-5h-nPh"/>
                                 <include reference="Lsj-ET-67M"/>
                                 <include reference="M6t-gd-xtg"/>
                                 <include reference="Tjr-Xk-TFz"/>
-                                <include reference="zPj-5h-nPh"/>
                             </mask>
                         </variation>
                     </view>

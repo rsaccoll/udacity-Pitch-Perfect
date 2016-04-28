@@ -25,9 +25,10 @@ class PlaySoundsViewController: UIViewController {
     var audioPlayerNode: AVAudioPlayerNode!
     var stopTime: NSTimer!
     
-    enum ButtonType: Int {case Slow = 0, Fast, Chipmunk, Vader, Echo, Reverb }
+    enum ButtonType: Int {case Slow = 0, Fast = 1, Chipmunk = 2, Vader = 3, Echo = 4, Reverb = 5 }
     
     @IBAction func playSoundForButton(sender: UIButton) {
+        print("Play Sound Button Pressed")
         switch(ButtonType(rawValue: sender.tag)!) {
         case .Slow:
             playSound(rate: 0.5)
@@ -47,6 +48,7 @@ class PlaySoundsViewController: UIViewController {
     
     @IBAction func stoppButtonPressed(sender: AnyObject) {
         print("STAP")
+        stopAudio()
     }
     
  
@@ -54,6 +56,7 @@ class PlaySoundsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("PlaySoundsViewController loaded")
         setupAudio()
 
 
@@ -63,7 +66,9 @@ class PlaySoundsViewController: UIViewController {
         configureUI(.NotPlaying)
     }
     
-    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
 
 
 }

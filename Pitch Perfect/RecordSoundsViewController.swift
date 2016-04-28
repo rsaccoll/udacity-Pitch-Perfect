@@ -16,7 +16,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     @IBOutlet weak var recordingInProgress: UILabel!
     
     var audioRecorder:AVAudioRecorder!
-    var recordedAudio:RecordedAudio!
+    var recordedAudio:NSURL!
 
     
     override func viewDidLoad() {
@@ -24,8 +24,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         // Do any additional setup after loading the view, typically from a nib.
     }
     override func viewWillAppear(animated: Bool) {
-        StopButton1.hidden = true
-        recordButton.enabled = true
+        //StopButton1.hidden = true
+        recordingInProgress.enabled = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,6 +35,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
 
    
     @IBAction func recordAudio(sender: UIButton) {
+        print("record button pressed")
         recordingInProgress.hidden = false
         StopButton1.hidden = false
         recordButton.enabled = false
@@ -54,15 +55,22 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         audioRecorder.record()
     }
     
+    @IBAction func stopRecording(sender: AnyObject) {
+        print("stop recording pressed")
+        recordButton.enabled = true
+        StopButton1.hidden = true
+        
+        audioRecorder.stop()
+        let audioSession = AVAudioSession.sharedInstance()
+        try! audioSession.setActive(false)
+    }
+    
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {//
-        if flag {
-            recordedAudio = RecordedAudio()
-            recordedAudio.filePathUrl = recorder.url
-            recordedAudio.title = recorder.url.lastPathComponent
-            
+        if(flag) {
+            recordedAudio = recorder.url
             self.performSegueWithIdentifier("stopRecording", sender: recordedAudio)
         } else {
-            print("Recording was not successful")
+            print("Recording not successfull")
             recordButton.enabled = true
             StopButton1.hidden = true
         }
@@ -70,9 +78,13 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "stopRecording" {
-            let playSoundVC:PlaySoundsViewController = segue.destinationViewController as! PlaySoundsViewController
-            let data = sender as! RecordedAudio
-            playSoundVC.receivedAudio = data
+            let playSoundVC = segue.destinationViewController as! PlaySoundsViewController
+            let recordedAudioURL = sender as! NSURL
+            playSoundVC.recordedAudioURL = recordedAudioURL
+            
+            //let playSoundVC:PlaySoundsViewController = segue.destinationViewController as! PlaySoundsViewController
+            //let data = sender as! RecordedAudio
+            //playSoundVC.receivedAudio = data
         }
     }
     
