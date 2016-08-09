@@ -24,7 +24,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         
     }
     override func viewWillAppear(animated: Bool) {
-        //StopButton1.hidden = true
+        StopButton1.hidden = true
         recordingInProgress.enabled = true
     }
 
@@ -56,9 +56,9 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     }
     
     @IBAction func stopRecording(sender: AnyObject) {
-        print("stop recording pressed")
+        print("stop recording pressedd")
         recordButton.enabled = true
-        //recordingInProgress.hidden = false
+        recordingInProgress.hidden = false
         StopButton1.hidden = true
         
         audioRecorder.stop()
@@ -82,6 +82,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
             let playSoundVC = segue.destinationViewController as! PlaySoundsViewController
             let recordedAudioURL = sender as! NSURL
             playSoundVC.recordedAudioURL = recordedAudioURL
+            //stopRecording
             
             //let playSoundVC:PlaySoundsViewController = segue.destinationViewController as! PlaySoundsViewController
             //let data = sender as! RecordedAudio
