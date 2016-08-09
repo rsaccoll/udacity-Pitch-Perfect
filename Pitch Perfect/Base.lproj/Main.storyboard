@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="S3f-kW-dt4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="S3f-kW-dt4">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -10,7 +9,7 @@
         <!--Record-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="RecordSoundsViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecordSound" id="BYZ-38-t0r" customClass="RecordSoundsViewController" customModule="Pitch_Perfect" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -22,6 +21,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUn-Ur-3jB">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
+                                <accessibility key="accessibilityConfiguration" identifier="record"/>
                                 <state key="normal" image="microphone"/>
                                 <connections>
                                     <action selector="recordAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FS3-lh-pFV"/>
@@ -30,6 +30,7 @@
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recording" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YN2-qv-EfF">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <animations/>
+                                <accessibility key="accessibilityConfiguration" identifier="recording"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="0.33380817285009506" green="0.38430606225753577" blue="0.52251025883838387" alpha="1" colorSpace="calibratedRGB"/>
@@ -37,11 +38,15 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbO-YW-Qkb">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
+                                <accessibility key="accessibilityConfiguration" identifier="stop"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" image="stopAudio">
                                     <color key="titleColor" red="0.33380817289999998" green="0.38430606229999997" blue="0.52251025880000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="stopRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OIW-H3-1Jz"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>
@@ -87,7 +92,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Record" id="06i-lm-fxf"/>
                     <connections>
-                        <outlet property="StopButton1" destination="tbO-YW-Qkb" id="7LB-9D-kCr"/>
+                        <outlet property="StopButton1" destination="tbO-YW-Qkb" id="B3i-b0-vi1"/>
                         <outlet property="recordButton" destination="eUn-Ur-3jB" id="yq2-Gn-0r1"/>
                         <outlet property="recordingInProgress" destination="YN2-qv-EfF" id="dTt-wo-Nxx"/>
                     </connections>
@@ -99,7 +104,7 @@
         <!--Play Sounds View Controller-->
         <scene sceneID="dm1-CW-5FW">
             <objects>
-                <viewController id="atA-8K-kXG" customClass="PlaySoundsViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlayController" id="atA-8K-kXG" customClass="PlaySoundsViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MXj-6v-IRp"/>
                         <viewControllerLayoutGuide type="bottom" id="VC0-o7-zgr"/>
@@ -321,7 +326,7 @@
         <!--Navigation Controller-->
         <scene sceneID="iuU-iw-tI6">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="S3f-kW-dt4" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NaviController" automaticallyAdjustsScrollViewInsets="NO" id="S3f-kW-dt4" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kBF-mQ-F6N">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

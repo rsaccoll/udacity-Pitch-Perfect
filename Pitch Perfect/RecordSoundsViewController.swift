@@ -21,7 +21,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
     override func viewWillAppear(animated: Bool) {
         //StopButton1.hidden = true
@@ -58,6 +58,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     @IBAction func stopRecording(sender: AnyObject) {
         print("stop recording pressed")
         recordButton.enabled = true
+        //recordingInProgress.hidden = false
         StopButton1.hidden = true
         
         audioRecorder.stop()
