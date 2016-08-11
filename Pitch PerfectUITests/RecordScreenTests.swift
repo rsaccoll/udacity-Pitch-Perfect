@@ -27,7 +27,18 @@ class RecordScreenTests: XCTestCase {
         super.tearDown()
     }
     
-    func testStuff() {
+    func testOpenRecordScreen() {
+        recordScreen.tapRecordButton()
+        recordScreen.verifIsPresenting()
+        recordScreen.tapStopButton()
+        playScreen.tapOptionButton("Back")
+        recordScreen.tapRecordButton()
+
+
+    }
+    
+    func testOpenPlayScreen() {
+        
         recordScreen.tapRecordButton()
         recordScreen.tapStopButton()
         playScreen.verifyIfExist("SnailButton")
@@ -36,11 +47,8 @@ class RecordScreenTests: XCTestCase {
         playScreen.verifyIfExist("DarthVaderButton")
         playScreen.verifyIfExist("EchoButton")
         playScreen.verifyIfExist("ReverbButton")
-        playScreen.tapOptionButton("SnailButton")
         playScreen.tapOptionButton("Back")
-        recordScreen.tapRecordButton()
-
-
+        
     }
-    
+
     }

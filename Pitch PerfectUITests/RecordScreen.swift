@@ -25,5 +25,12 @@ class RecordScreen {
     func tapStopButton() {
         app.buttons["stop"].tap()
     }
+    
+    func verifIsPresenting() {
+        XCTAssert(app.staticTexts["Recording"].exists)
+        //recording
+    }
+    
+
 
 }
