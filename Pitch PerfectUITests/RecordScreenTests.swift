@@ -28,11 +28,11 @@ class RecordScreenTests: XCTestCase {
     }
     
     func testOpenRecordScreen() {
-        recordScreen.tapRecordButton()
+        recordScreen.tapButtonByName("record")
         recordScreen.verifIsPresenting()
         recordScreen.tapStopButton()
         playScreen.tapOptionButton("Back")
-        recordScreen.tapRecordButton()
+        recordScreen.tapButtonByName("record")
 
 
     }

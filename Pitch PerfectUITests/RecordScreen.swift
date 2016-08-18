@@ -22,6 +22,10 @@ class RecordScreen {
         app.buttons["record"].tap()
     }
     
+    func tapButtonByName(stuff: String){
+        app.buttons[stuff].tap()
+    }
+    
     func tapStopButton() {
         app.buttons["stop"].tap()
     }
